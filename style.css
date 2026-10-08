@@ -1,0 +1,297 @@
+/* DARK WINTER COLOR PALETTE */
+:root {
+  --white: #ffffff;
+  --black: #101218;
+  --navy: #101d36;
+  --cranberry: #a31342;
+  --emerald: #005246;
+  --royal-blue: #2446a8;
+  --plum: #482044;
+  --icy-gray: #e9edf2;
+  --slate: #444d5d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--black);
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.notice {
+  padding: 10px;
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 5%;
+  border-bottom: 1px solid var(--icy-gray);
+}
+
+.logo {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo strong {
+  font-size: 30px;
+  letter-spacing: -2px;
+}
+
+.logo span {
+  font-family: Georgia, serif;
+  font-size: 21px;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  font-size: 13px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--cranberry);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 5%;
+}
+
+.label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: -3px;
+  margin: 25px 0;
+}
+
+.description {
+  max-width: 400px;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  padding: 16px 25px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* PLANNER DRAWING */
+.scene {
+  min-height: 430px;
+  padding: 45px 25px;
+  background: var(--icy-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.planner {
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+  background: var(--white);
+  box-shadow: 12px 18px 25px #10121818;
+  transform: rotate(-5deg);
+}
+
+.planner-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 8px;
+}
+
+th,
+td {
+  border: 1px solid var(--icy-gray);
+  padding: 5px;
+  height: 42px;
+  text-align: left;
+}
+
+th {
+  height: 24px;
+  font-weight: normal;
+}
+
+.note {
+  background: var(--cranberry);
+  color: var(--white);
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 10px;
+}
+
+/* COLLECTION */
+.collection {
+  padding: 50px 5% 80px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--black);
+  padding-top: 20px;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 36px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.product-art {
+  height: 250px;
+  display: grid;
+  place-items: center;
+  background: var(--icy-gray);
+}
+
+.cover {
+  width: 140px;
+  height: 190px;
+  padding: 20px;
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: 8px 10px 12px #10121815;
+  font-size: 15px;
+}
+
+.cover.light {
+  background: var(--white);
+  color: var(--black);
+}
+
+.cover.card {
+  height: 100px;
+  width: 170px;
+  background: var(--cranberry);
+  color: var(--white);
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.product p {
+  font-size: 12px;
+  color: var(--slate);
+}
+
+/* ABOUT */
+.about {
+  padding: 65px 5%;
+  border-top: 1px solid var(--icy-gray);
+  max-width: 850px;
+}
+
+.about p {
+  line-height: 1.8;
+}
+
+footer {
+  border-top: 1px solid var(--icy-gray);
+  padding: 25px 5%;
+  font-size: 11px;
+}
+
+/* PHONE AND TABLET LAYOUT */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 45px 5%;
+    gap: 35px;
+  }
+
+  .scene {
+    min-height: 350px;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
