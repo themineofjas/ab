@@ -1,7 +1,163 @@
-Skip to content
-DESIGN STUDY 002 / FICTIONAL PROFILES / NO MESSAGES ARE DELIVERED
-ARTIST agendabook
-Discover Bulletin Board Creative ID Agendabooks About
-THE CREATIVE NETWORK DEMO
-Dial a creator Inquiries 0 Workspace Sample profile
-ARTIST / Imagine. Connect. Make.  Reset demo data Sample messages and tasks stay in this browser when storage is available. No accounts, payments, or live messaging.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ARTIST — The creative network</title>
+
+  <link rel="stylesheet" href="./ecosystem.css">
+  <script src="./ecosystem.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="notice">
+    DESIGN STUDY 002 / FICTIONAL PROFILES / NO MESSAGES ARE DELIVERED
+  </div>
+
+  <header class="site-header">
+    <a
+      class="logo"
+      href="./index.html"
+      aria-label="ARTIST agendabook home"
+    >
+      <strong>ARTIST</strong>
+      <span>agendabook</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#discover" data-route="discover">Discover</a>
+      <a href="#board" data-route="board">Bulletin Board</a>
+      <a href="./creative-id.html">Creative ID</a>
+      <a href="./index.html#collection">Agendabooks</a>
+      <a href="./index.html#about">About</a>
+    </nav>
+  </header>
+
+  <div class="network-bar">
+    <span>
+      THE CREATIVE NETWORK
+      <span class="demo-tag">DEMO</span>
+    </span>
+
+    <nav aria-label="Demo tools">
+      <a href="#dial" data-route="dial">Dial a creator</a>
+
+      <a href="#inbox" data-route="inbox">
+        Inquiries
+        <span id="inquiry-count">0</span>
+      </a>
+
+      <a href="#workspace" data-route="workspace">Workspace</a>
+      <a href="#profile/alex">Sample profile</a>
+    </nav>
+  </div>
+
+  <main id="main" tabindex="-1"></main>
+
+  <p
+    class="status"
+    id="status"
+    role="status"
+    aria-live="polite"
+  ></p>
+
+  <footer>
+    <span>ARTIST / Imagine. Connect. Make.</span>
+
+    <button type="button" id="reset-demo">
+      Reset demo data
+    </button>
+
+    <small>
+      Sample messages and tasks stay in this browser when storage
+      is available. No accounts, payments, or live messaging.
+    </small>
+  </footer>
+
+  <dialog
+    id="identity-dialog"
+    aria-labelledby="identity-title"
+  >
+    <div class="dialog-inner">
+      <button
+        class="close"
+        type="button"
+        data-close="identity-dialog"
+        aria-label="Close identity card"
+      >
+        ×
+      </button>
+
+      <div id="identity-content"></div>
+    </div>
+  </dialog>
+
+  <dialog
+    id="message-dialog"
+    aria-labelledby="message-title"
+  >
+    <div class="dialog-inner">
+      <button
+        class="close"
+        type="button"
+        data-close="message-dialog"
+        aria-label="Close message preview"
+      >
+        ×
+      </button>
+
+      <p class="eyebrow">
+        PROJECT-LINKED INQUIRY / DEMO
+      </p>
+
+      <h2 id="message-title">Start a conversation.</h2>
+
+      <form id="message-form">
+        <input type="hidden" id="recipient-id">
+
+        <label for="message-project">
+          What are you contacting them about?
+        </label>
+        <select id="message-project"></select>
+
+        <label for="message-subject">
+          Automatic subject
+        </label>
+        <input id="message-subject" readonly>
+
+        <label for="message-body">
+          Your message
+        </label>
+        <textarea
+          id="message-body"
+          rows="5"
+          maxlength="2000"
+          required
+          placeholder="Introduce yourself and explain what you could make together."
+        ></textarea>
+
+        <p class="help">
+          This saves a sample inquiry in this browser.
+          It does not send a message.
+        </p>
+
+        <button class="button" type="submit">
+          Save demo inquiry ↗
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <noscript>
+    <p class="empty">
+      Enable JavaScript to explore this interactive demo.
+      <a href="./index.html">
+        Return to the agendabook homepage.
+      </a>
+    </p>
+  </noscript>
+</body>
+</html>
