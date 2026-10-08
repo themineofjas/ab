@@ -6,17 +6,17 @@
 <title>ARTIST agendabook</title>
 
 <style>
-/* BRAND COLORS */
+/* DARK WINTER COLOR PALETTE */
 :root {
-  --paper: #ffffff;
-  --ink: #171717;
-  --navy: #1c2942;
-  --red: #862c38;
-  --khaki: #c8b895;
-  --forest: #294638;
-  --charcoal: #45484d;
-  --stone: #e9e6df;
-  --line: #e9e6df;
+  --white: #ffffff;
+  --black: #101218;
+  --navy: #101d36;
+  --cranberry: #a31342;
+  --emerald: #005246;
+  --royal-blue: #2446a8;
+  --plum: #482044;
+  --icy-gray: #e9edf2;
+  --slate: #444d5d;
 }
 
 * {
@@ -29,8 +29,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--white);
+  color: var(--black);
   font-family: Arial, sans-serif;
 }
 
@@ -41,7 +41,7 @@ a {
 .notice {
   padding: 10px;
   background: var(--navy);
-  color: var(--paper);
+  color: var(--white);
   text-align: center;
   font-size: 11px;
   letter-spacing: 2px;
@@ -53,7 +53,7 @@ header {
   align-items: center;
   gap: 24px;
   padding: 26px 5%;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--icy-gray);
 }
 
 .logo {
@@ -82,7 +82,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--red);
+  color: var(--cranberry);
 }
 
 .hero {
@@ -127,14 +127,14 @@ h1 {
 .button:hover,
 .button:focus-visible {
   background: var(--navy);
-  color: var(--paper);
+  color: var(--white);
 }
 
 /* PLANNER DRAWING */
 .scene {
   min-height: 430px;
   padding: 45px 25px;
-  background: var(--stone);
+  background: var(--icy-gray);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -144,8 +144,8 @@ h1 {
   width: 100%;
   max-width: 420px;
   padding: 30px;
-  background: var(--paper);
-  box-shadow: 12px 18px 25px #00000018;
+  background: var(--white);
+  box-shadow: 12px 18px 25px #10121818;
   transform: rotate(-5deg);
 }
 
@@ -165,7 +165,7 @@ table {
 
 th,
 td {
-  border: 1px solid var(--line);
+  border: 1px solid var(--icy-gray);
   padding: 5px;
   height: 42px;
   text-align: left;
@@ -177,8 +177,8 @@ th {
 }
 
 .note {
-  background: var(--khaki);
-  color: var(--ink);
+  background: var(--cranberry);
+  color: var(--white);
   margin-top: 20px;
   padding: 12px;
   font-size: 10px;
@@ -194,7 +194,7 @@ th {
   align-items: baseline;
   justify-content: space-between;
   gap: 20px;
-  border-top: 1px solid var(--ink);
+  border-top: 1px solid var(--black);
   padding-top: 20px;
 }
 
@@ -214,7 +214,7 @@ h2 {
   height: 250px;
   display: grid;
   place-items: center;
-  background: #f3f1ec;
+  background: var(--icy-gray);
 }
 
 .cover {
@@ -222,21 +222,21 @@ h2 {
   height: 190px;
   padding: 20px;
   background: var(--navy);
-  color: var(--paper);
-  box-shadow: 8px 10px 12px #00000015;
+  color: var(--white);
+  box-shadow: 8px 10px 12px #10121815;
   font-size: 15px;
 }
 
 .cover.light {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--white);
+  color: var(--black);
 }
 
 .cover.card {
   height: 100px;
   width: 170px;
-  background: var(--red);
-  color: var(--paper);
+  background: var(--cranberry);
+  color: var(--white);
 }
 
 h3 {
@@ -246,13 +246,13 @@ h3 {
 
 .product p {
   font-size: 12px;
-  color: var(--charcoal);
+  color: var(--slate);
 }
 
 /* ABOUT */
 .about {
   padding: 65px 5%;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--icy-gray);
   max-width: 850px;
 }
 
@@ -261,7 +261,7 @@ h3 {
 }
 
 footer {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--icy-gray);
   padding: 25px 5%;
   font-size: 11px;
 }
