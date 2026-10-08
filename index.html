@@ -1,12 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Planner Design Studio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARTIST agendabook</title>
+
+<style>
+/* EDIT THESE COLORS TO CHANGE THE WHOLE SITE */
+:root {
+  --paper: #f5f3ed;
+  --ink: #202020;
+  --line: #c9c6bd;
+  --accent: #dee566;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+}
+a { color: inherit; }
+.notice {
+  padding: 10px;
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 5%;
+  border-bottom: 1px solid var(--line);
+}
+.logo { text-decoration: none; white-space: nowrap; }
+.logo strong { font-size: 30px; letter-spacing: -2px; }
+.logo span { font-family: Georgia, serif; font-size: 21px; }
+nav { display: flex; gap: 24px; }
+nav a { font-size: 13px; text-decoration: none; }
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 5%;
+}
+.label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: -3px;
+  margin: 25px 0;
+}
+.description {
+  max-width: 400px;
+  line-height: 1.7;
+  font-size: 16px;
+}
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  border: 1px solid var(--ink);
+  padding: 16px 25px;
+  text-decoration: none;
+  font-size: 12px;
+}
+.button:hover, .button:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* THE PLANNER DRAWING */
+.scene {
+  min-height: 430px;
+  padding: 45px 25px;
+  background: #e2dfd6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.planner {
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+  background: #fffef9;
+  box-shadow: 12px 18px 25px #00000018;
+  transform: rotate(-5deg);
+}
+.planner-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 8px;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 5px;
+  height: 42px;
+  text-align: left;
+}
+th { height: 24px; font-weight: normal; }
+.note {
+  background: var(--accent);
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 10px;
+}
+.collection { padding: 50px 5% 80px; }
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--ink);
+  padding-top: 20px;
+}
+h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 36px;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+.product-art {
+  height: 250px;
+  display: grid;
+  place-items: center;
+  background: #e6e3dc;
+}
+.cover {
+  width: 140px;
+  height: 190px;
+  padding: 20px;
+  background: var(--ink);
+  color: white;
+  box-shadow: 8px 10px 12px #00000015;
+  font-size: 15px;
+}
+.cover.light { background: #fffef9; color: var(--ink); }
+.cover.card {
+  height: 100px;
+  width: 170px;
+  background: var(--accent);
+  color: var(--ink);
+}
+h3 { font-size: 15px; font-weight: normal; }
+.product p { font-size: 12px; color: #595959; }
+.about {
+  padding: 65px 5%;
+  border-top: 1px solid var(--line);
+  max-width: 850px;
+}
+.about p { line-height: 1.8; }
+footer {
+  border-top: 1px solid var(--line);
+  padding: 25px 5%;
+  font-size: 11px;
+}
+
+@media (max-width: 700px) {
+  header { flex-direction: column; align-items: flex-start; }
+  nav { flex-wrap: wrap; gap: 18px; }
+  .hero { grid-template-columns: 1fr; padding: 45px 5%; gap: 35px; }
+  .scene { min-height: 350px; }
+  .products { grid-template-columns: 1fr; }
+  .section-heading { align-items: flex-start; flex-direction: column; }
+}
+</style>
 </head>
+
 <body>
-  <h1>Planner Design Studio</h1>
-  <p>A design experiment in planning for creative minds.</p>
+<div class="notice">DESIGN STUDY 001 — A WORK IN PROGRESS</div>
+
+<header>
+  <a class="logo" href="#" aria-label="ARTIST agendabook home">
+    <strong>ARTIST</strong> <span>agendabook</span>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href="#collection">The Collection</a>
+    <a href="#system">The System</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="system">
+    <div>
+      <p class="label">Planning tools for creative minds</p>
+      <h1>Room to imagine.<br>Structure to act.</h1>
+      <p class="description">
+        Agendabooks, working pages, and everyday tools
+        for moving between ideas and the work of making them real.
+      </p>
+      <a class="button" href="#collection">EXPLORE THE DESIGN STUDY ↗</a>
+    </div>
+
+    <div class="scene">
+      <div class="planner">
+        <div class="planner-title">
+          <strong>ARTIST</strong>
+          <span>THE WEEK / 001</span>
+        </div>
+        <table aria-label="Sample weekly planner layout">
+          <thead>
+            <tr>
+              <th scope="col">AREA</th>
+              <th scope="col">SUN</th>
+              <th scope="col">MON</th>
+              <th scope="col">TUE</th>
+              <th scope="col">WED</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">CREATE</th><td></td><td></td><td></td><td></td></tr>
+            <tr><th scope="row">LEARN</th><td></td><td></td><td></td><td></td></tr>
+            <tr><th scope="row">WORK</th><td></td><td></td><td></td><td></td></tr>
+            <tr><th scope="row">LIFE</th><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+        <div class="note">ONE IDEA. ONE NEXT STEP.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="collection" id="collection">
+    <div class="section-heading">
+      <h2>The working collection.</h2>
+      <p class="label">Three sample concepts / Nothing for sale</p>
+    </div>
+
+    <div class="products">
+      <article class="product">
+        <div class="product-art" aria-hidden="true">
+          <div class="cover">ARTIST<br><br>agendabook<br><br>001</div>
+        </div>
+        <h3>The Agendabook</h3>
+        <p>A home for the week, across every area of life.</p>
+      </article>
+
+      <article class="product">
+        <div class="product-art" aria-hidden="true">
+          <div class="cover light">WORKING<br>PAGES<br><br>□ Imagine<br>□ Plan<br>□ Make</div>
+        </div>
+        <h3>The Working Pages</h3>
+        <p>Simple steps for projects with many moving parts.</p>
+      </article>
+
+      <article class="product">
+        <div class="product-art" aria-hidden="true">
+          <div class="cover card">FIELD NOTES<br><br>IDEA / ACTION</div>
+        </div>
+        <h3>The Field Card</h3>
+        <p>A small place to capture what matters on the move.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <p class="label">The idea behind ARTIST agendabook</p>
+    <h2>A creative life, with a working structure.</h2>
+    <p>
+      Editorial sensibility. The familiar structure of a school
+      agendabook. The freedom to build your own course of study.
+      This is an exploration of tools that make the next step
+      easier to see—and leave space for a mind to wander.
+    </p>
+  </section>
+</main>
+
+<footer>ARTIST agendabook · Personal design experiment · Purchasing unavailable</footer>
 </body>
 </html>
