@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Creative ID — ARTIST agendabook</title>
+
   <link rel="stylesheet" href="./style.css">
-  <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="./creative-id.css">
+  <script src="./creative-id.js" defer></script>
 </head>
 
 <body>
-  <div class="notice">DESIGN STUDY 001 — A WORK IN PROGRESS</div>
+  <div class="notice">CREATIVE ID — INTERACTIVE DESIGN STUDY</div>
 
   <header>
     <a class="logo" href="./index.html" aria-label="ARTIST agendabook home">
@@ -24,8 +26,228 @@
     </nav>
   </header>
 
-  <main>
-    <p>hello</p>
+  <main class="cid-page">
+    <section class="cid-intro">
+      <p class="label">An introduction, on your terms.</p>
+      <h1>Creative ID.</h1>
+      <p>
+        Tap for work. Scan for connection.
+        One card, with room for more than one side of you.
+      </p>
+    </section>
+
+    <div class="cid-layout">
+      <section class="cid-preview" aria-label="Your card preview">
+        <div class="cid-preview-heading">
+          <h2>Your introduction.</h2>
+          <span class="label">Live preview</span>
+        </div>
+
+        <div class="cid-card-stage">
+          <!-- PORTRAIT FRONT -->
+          <div class="cid-card cid-front">
+            <div class="cid-card-top">
+              <span>CREATIVE ID</span>
+              <span>001</span>
+            </div>
+
+            <div class="cid-monogram" aria-hidden="true">A</div>
+
+            <div class="cid-name-block">
+              <h3 id="card-name">Alex Morgan</h3>
+              <p id="card-secondary">Alexandra Morgan</p>
+              <p class="cid-call-sign" id="card-call-sign">@STUDIOALEX</p>
+            </div>
+
+            <div class="cid-card-bottom">
+              <span>TAP → WORK</span>
+              <span>ARTIST</span>
+            </div>
+          </div>
+
+          <!-- LANDSCAPE BACK -->
+          <div class="cid-card cid-back">
+            <div class="cid-card-top">
+              <span>THE OTHER SIDE</span>
+              <span>SCAN → CONNECTION</span>
+            </div>
+
+            <div class="cid-back-content">
+              <div class="cid-symbol-area">
+                <span class="cid-base-symbol" id="card-base">✦</span>
+
+                <div class="cid-symbol-row" aria-label="Cultural and heritage symbols">
+                  <span data-heritage-slot="0"></span>
+                  <span data-heritage-slot="1"></span>
+                  <span data-heritage-slot="2"></span>
+                  <span data-heritage-slot="3"></span>
+                </div>
+
+                <div class="cid-symbol-row" aria-label="Personal signals and optional zodiac">
+                  <span data-personal-slot="0"></span>
+                  <span data-personal-slot="1"></span>
+                  <span data-personal-slot="2"></span>
+                  <span data-personal-slot="3"></span>
+                  <span id="card-zodiac"></span>
+                </div>
+              </div>
+
+              <div class="cid-qr-placeholder">
+                <span aria-hidden="true">▦</span>
+                <small>QR PREVIEW</small>
+              </div>
+            </div>
+
+            <div class="cid-card-bottom">
+              <span id="card-back-sign">@STUDIOALEX</span>
+              <span>ARTIST agendabook</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="cid-caption">
+          Portrait front / Landscape back.
+          QR graphic is a placeholder, not a scannable code.
+        </p>
+
+        <div class="cid-preview-actions">
+          <button type="button" data-preview="work">Preview a tap ↗</button>
+          <button type="button" data-preview="connection">Preview a scan ↗</button>
+        </div>
+      </section>
+
+      <section class="cid-editor" aria-labelledby="editor-heading">
+        <p class="label">Design your card</p>
+        <h2 id="editor-heading">Make an introduction.</h2>
+
+        <form id="cid-form">
+          <fieldset>
+            <legend>01 / Identity</legend>
+
+            <label for="display-name">Display name</label>
+            <input id="display-name" type="text"
+                   value="Alex Morgan" maxlength="32">
+
+            <label for="secondary-name">Secondary name — optional</label>
+            <input id="secondary-name" type="text"
+                   value="Alexandra Morgan" maxlength="40">
+
+            <label for="call-sign">Call sign</label>
+            <input id="call-sign" type="text"
+                   value="@STUDIOALEX" maxlength="24"
+                   spellcheck="false">
+
+            <label for="card-color">Card color</label>
+            <select id="card-color">
+              <option value="navy">Midnight navy</option>
+              <option value="cranberry">Cranberry</option>
+              <option value="emerald">Deep emerald</option>
+              <option value="blue">Royal blue</option>
+              <option value="plum">Deep plum</option>
+              <option value="black">Near black</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>02 / The other side</legend>
+
+            <label for="base-symbol">Base symbol</label>
+            <input id="base-symbol" type="text" value="✦" maxlength="12">
+
+            <label for="heritage-symbols">Cultural / heritage symbols</label>
+            <input id="heritage-symbols" type="text" value=""
+                   placeholder="Up to four, separated by commas">
+            <p class="cid-help">For example: 🌍, 🌊, 🌺, ☀</p>
+
+            <label for="personal-symbols">Personal signals</label>
+            <input id="personal-symbols" type="text" value="✎, ♫, 📚, ✧"
+                   placeholder="Up to four, separated by commas">
+
+            <label for="zodiac">Zodiac — optional</label>
+            <select id="zodiac">
+              <option value="">None</option>
+              <option value="♈">Aries</option>
+              <option value="♉">Taurus</option>
+              <option value="♊">Gemini</option>
+              <option value="♋">Cancer</option>
+              <option value="♌">Leo</option>
+              <option value="♍">Virgo</option>
+              <option value="♎">Libra</option>
+              <option value="♏">Scorpio</option>
+              <option value="♐">Sagittarius</option>
+              <option value="♑">Capricorn</option>
+              <option value="♒">Aquarius</option>
+              <option value="♓">Pisces</option>
+            </select>
+
+            <p class="cid-help">
+              The card shows symbols without category labels.
+              Zodiac occupies the fifth personal slot.
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>03 / Two ways to connect</legend>
+
+            <label for="work-link">Tap destination / Work</label>
+            <input id="work-link" type="url"
+                   placeholder="https://your-portfolio.com">
+
+            <label for="connection-link">Scan destination / Connection</label>
+            <input id="connection-link" type="url"
+                   placeholder="https://your-personal-page.com">
+
+            <p class="cid-help">
+              Links are used only for this preview.
+              This mockup does not program NFC or create permanent redirects.
+            </p>
+          </fieldset>
+
+          <button class="cid-reset" type="reset">Reset sample</button>
+        </form>
+      </section>
+    </div>
+
+    <section class="cid-explanation">
+      <p class="label">Two doors. You choose what opens.</p>
+
+      <div class="cid-two-doors">
+        <article>
+          <span class="cid-door-number">01 / TAP</span>
+          <h2>Meet my work.</h2>
+          <p>
+            A direct route to your portfolio, services, products,
+            or ways to collaborate.
+          </p>
+        </article>
+
+        <article>
+          <span class="cid-door-number">02 / SCAN</span>
+          <h2>Get to know me.</h2>
+          <p>
+            A more deliberate introduction to your interests,
+            creative profile, and the stories you choose to share.
+          </p>
+        </article>
+      </div>
+    </section>
   </main>
+
+  <dialog id="cid-dialog" aria-labelledby="preview-title">
+    <div class="cid-dialog-content">
+      <button class="cid-close" type="button" aria-label="Close preview">✕</button>
+      <p class="label" id="preview-label"></p>
+      <h2 id="preview-title"></h2>
+      <p id="preview-description"></p>
+      <a id="preview-link" target="_blank" rel="noopener noreferrer">
+        Open destination ↗
+      </a>
+      <p class="cid-help">Simulated card interaction.</p>
+    </div>
+  </dialog>
+
+  <footer>
+    ARTIST agendabook · Personal design experiment · Purchasing unavailable
+  </footer>
 </body>
 </html>
