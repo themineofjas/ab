@@ -1,0 +1,42 @@
+/* Sublime App Typography Weights & Clean Palette Hooks */
+:root {
+    --sublime-bg: #fcfbfa;
+    --sublime-card-bg: #ffffff;
+    --sublime-border: #eae7e4;
+    --sublime-text-main: #2c2a29;
+    --sublime-text-muted: #736f6c;
+}
+
+body {
+    background-color: var(--sublime-bg);
+    color: var(--sublime-text-main);
+    transition: background-color 0.3s ease;
+}
+
+/* Pinterest-style Smooth Curation Cards */
+.sublime-card {
+    background-color: var(--sublime-card-bg);
+    border: 1px solid var(--sublime-border);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sublime-card:hover {
+    border-color: #b5b0aa;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px rgba(44, 42, 41, 0.06);
+}
+
+/* Functional Transitions for Lightbox Modals */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Utility layout details */
+.font-mono-tag {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
