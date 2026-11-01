@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sublime Library // Multidisciplinary Digital Garden</title>
+    <!-- Tailwind CSS for structural grid layout -->
+    <script src="https://tailwindcss.com"></script>
+    <!-- Lucide Icons for clean, minimalist curation UI -->
+    <script src="https://unpkg.com"></script>
+    <!-- Custom styling hook -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-4 md:p-8 max-w-6xl mx-auto space-y-8 pb-24">
+
+    <!-- LEVEL 1 & 2: THE STATUS HEADER & SYSTEM TAXONOMY -->
+    <header class="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-[#eae7e4] pb-6 gap-4">
+        <div>
+            <div class="text-[10px] tracking-widest uppercase font-bold text-neutral-400 font-mono">Active Library</div>
+            <h1 class="text-3xl font-serif font-normal text-neutral-900 mt-1">creative-director-universe</h1>
+            <p class="text-sm text-neutral-500 mt-2 font-light">
+                [Genus: <span class="text-neutral-900 font-medium">Artist</span>] · 
+                [Species: <span class="text-neutral-900 font-medium">Scanner / Generalist</span>] · 
+                [Workflow: <span class="text-neutral-900 font-medium">Agile Producer</span>]
+            </p>
+        </div>
+        <div class="flex flex-col items-start md:items-end gap-1">
+            <span class="text-[11px] bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full border border-emerald-200 font-medium tracking-wide flex items-center shadow-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
+                Tending: <span id="current-era-badge" class="font-bold">Era 04 - Cybernetic Folklore</span>
+            </span>
+            <span class="text-xs text-neutral-400 font-light mt-1 font-mono">Status: Live Build v1.2</span>
+        </div>
+    </header>
+
+    <!-- THE VISUAL DIGITAL GARDEN GRID (Sublime-style Clipped Cards) -->
+    <section class="space-y-4">
+        <div class="flex justify-between items-center">
+            <h2 class="text-xs uppercase font-bold tracking-wider text-neutral-400 font-mono">🌿 Clipped Cards & Web Elements</h2>
+            <div id="add-clip-btn" class="text-xs text-blue-600 font-medium hover:underline cursor-pointer flex items-center gap-1">
+                <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                <span>Quick Clip Note</span>
+            </div>
+        </div>
+
+        <!-- Dynamic Grid generated via JavaScript -->
+        <div id="garden-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- JS inserts cards dynamically here -->
+        </div>
+    </section>
+
+    <!-- THE CATALOG: SPOTIFY/YOUTUBE-STYLE ERA REPOSITORY -->
+    <section class="border border-[#eae7e4] bg-[#ffffff] p-6 rounded-xl shadow-sm space-y-4">
+        <div class="border-b border-neutral-100 pb-3 flex justify-between items-center">
+            <div>
+                <h2 class="text-sm uppercase font-bold tracking-wider text-neutral-800 font-mono">💿 The Catalog / Cultivated Albums</h2>
+                <p class="text-xs text-neutral-400 font-light mt-0.5">Linear collection playlists of past completed eras</p>
+            </div>
+            <span class="text-xs bg-neutral-50 border border-neutral-200 text-neutral-500 px-2 py-1 rounded font-medium font-mono">Living Repositories</span>
+        </div>
+        
+        <div id="catalog-list" class="space-y-2">
+            <!-- JS inserts historical eras dynamically here -->
+        </div>
+    </section>
+
+    <!-- CRAIGSLIST MARKETPLACE & SKILL LOGISTICS -->
+    <footer class="border border-[#eae7e4] bg-[#ffffff] p-6 rounded-xl shadow-sm space-y-4">
+        <div class="border-b border-neutral-100 pb-2">
+            <h2 class="text-xs uppercase font-bold tracking-wider text-red-800 font-sans font-bold tracking-tight">⚖️ craigslist // digital garden classifieds & marketplace</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+            <div class="space-y-2">
+                <div class="font-bold text-neutral-900 border-b border-neutral-100 pb-1 flex justify-between">
+                    <span>[ services offered / open for commissions ]</span>
+                    <span class="text-yellow-700 text-xs font-normal">East Highland Park, VA</span>
+                </div>
+                <ul class="space-y-1 list-inside list-disc text-neutral-600 font-light">
+                    <li><span class="text-blue-600 underline cursor-pointer hover:text-blue-800">Rapid Multimedia Prototyping</span> - High-velocity 3-week theme sprints.</li>
+                    <li><span class="text-blue-600 underline cursor-pointer hover:text-blue-800">Semantic Curation Engineering</span> - Deep concept connections across visual/audio layers.</li>
+                </ul>
+            </div>
+            
+            <div class="space-y-2">
+                <div class="font-bold text-neutral-900 border-b border-neutral-100 pb-1">[ system logistics / stems wanted ]</div>
+                <ul class="space-y-1 list-inside list-disc text-neutral-600 font-light">
+                    <li>Seeking <span class="text-amber-700 font-medium">Sound Archivists</span> for generative field recording patches.</li>
+                    <li>Trading custom UI layout components for experimental audio frameworks.</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE LIGHTBOX / STEM MODAL (Sublime App Engine) -->
+    <div id="stem-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50 animate-fade-in">
+        <div class="bg-white max-w-lg w-full rounded-2xl border border-[#eae7e4] p-6 shadow-2xl space-y-4 relative">
+            <button id="close-modal" class="absolute top-4 right-4 text-neutral-400 hover:text-neutral-600">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div id="modal-tag-container"></div>
+            <h3 id="modal-title" class="text-xl font-serif text-neutral-900"></h3>
+            <div id="modal-content" class="text-sm text-neutral-700 leading-relaxed font-light py-2"></div>
+            <div class="border-t border-neutral-100 pt-4 flex justify-between items-center text-xs text-neutral-400 font-mono">
+                <span id="modal-source"></span>
+                <button id="modal-action-btn" class="bg-neutral-900 text-white px-3 py-1.5 rounded-lg hover:bg-neutral-800 transition-colors flex items-center gap-1">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                    <span>Download Stems</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Injecting main runtime application logic -->
+    <script src="app.js"></script>
+</body>
+</html>
